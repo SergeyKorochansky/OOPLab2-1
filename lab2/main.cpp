@@ -11,11 +11,10 @@ int main()
 	myWord.push_back(b);
 	myWord.push_back(one);
 
-//	std::cout << "olo " << b << std::endl;
-	for(auto it = myWord.begin(); it != myWord.end(); ++it)
-	{
-		std::cout << it->getChar();
-	}
-	std::getchar();
+	std::cin >> myWord;
+
+	std::cout << myWord;
+
+	system("pause");
 	return 0;
 }

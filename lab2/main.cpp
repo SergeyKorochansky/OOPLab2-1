@@ -1,8 +1,8 @@
-#include "Word.h"
+#include "Paragraph.h"
 
 int main()
 {
-	Symbol a('a');
+	/*Symbol a('a');
 	Symbol b('b');
 	Symbol one = Symbol::fromDigit(1);
 	
@@ -14,6 +14,10 @@ int main()
 	std::cin >> myWord;
 
 	std::cout << myWord;
+	*/
+	Paragraph myParagraph;
+	std::cin >> myParagraph;
+	std::cout << myParagraph;
 
 	system("pause");
 	return 0;

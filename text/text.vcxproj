@@ -11,10 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Paragraph.h" />
     <ClInclude Include="Symbol.h" />
     <ClInclude Include="Word.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Paragraph.cpp" />
     <ClCompile Include="Symbol.cpp" />
     <ClCompile Include="Word.cpp" />
   </ItemGroup>

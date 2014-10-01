@@ -17,7 +17,8 @@ public:
 	friend std::istream &operator>>(std::istream &stream, Symbol &symbol);
 	friend std::ostream &operator<<(std::ostream &stream, Symbol &symbol);
 
+	bool operator==(const Symbol &other);
+    bool operator!=(const Symbol &other);
 private:
 	symbolType ch;
 };
-

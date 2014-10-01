@@ -38,3 +38,13 @@ std::ostream &operator<<(std::ostream &stream, Symbol &symbol)
 	stream << outputChar;
 	return stream;
 }
+
+bool Symbol::operator==(const Symbol &other)
+{
+	return getChar() == other.getChar();
+}
+
+bool Symbol::operator!=(const Symbol &other)
+{
+	return getChar() != other.getChar();
+}

@@ -1,4 +1,4 @@
-#include "Symbol.h"
+#include "Word.h"
 
 int main()
 {
@@ -6,8 +6,16 @@ int main()
 	Symbol b('b');
 	Symbol one = Symbol::fromDigit(1);
 	
-	std::cout << "olo " << b << std::endl;
+	Word myWord;
+	myWord.push_back(a);
+	myWord.push_back(b);
+	myWord.push_back(one);
 
+//	std::cout << "olo " << b << std::endl;
+	for(auto it = myWord.begin(); it != myWord.end(); ++it)
+	{
+		std::cout << it->getChar();
+	}
 	std::getchar();
 	return 0;
 }

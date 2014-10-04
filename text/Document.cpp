@@ -2,7 +2,7 @@
 
 const int Document::fullSize() const
 {
-	int sum;
+	int sum = 0;
 	for(auto it = begin(); it != end(); ++it)
 		sum += it->fullSize();
 	return sum;

@@ -1,6 +1,14 @@
 #include "Paragraph.h"
 #include <sstream>
 
+const int Paragraph::fullSize() const
+{
+	int sum;
+	for(auto it = begin(); it != end(); ++it)
+		sum += it->size();
+	return sum;
+}
+
 std::istream &operator>>(std::istream &stream, Paragraph &paragraph)
 {
 	Word word;

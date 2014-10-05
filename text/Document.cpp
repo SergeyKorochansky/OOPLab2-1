@@ -25,15 +25,33 @@ std::ostream &operator<<(std::ostream &stream, Document &document)
 
 Document Document::copy(int fromIndex, int toIndex)
 {
-	Document newDocument;
-	for (auto it = begin(); it != end(); ++it)
+	Document newDoc;
+	int traversedSymbols = 0;
+	for (auto paragraph = begin(); paragraph != end(); ++paragraph)
 	{
-		//if (*it < fromIndex)
-		//{
-
-		//}
+		int currentParagraphSymbols = paragraph->fullSize();
+		if (traversedSymbols + currentParagraphSymbols >= fromIndex)
+		{
+			int traversedInParagraph = traversedSymbols;
+			Paragraph newParagraph;
+			for (auto word = paragraph->begin(); word != paragraph->end(); ++word)
+			{
+				int currentWordSymbols = word->size();
+				if (traversedInParagraph + currentWordSymbols >= fromIndex)
+				{
+					int startSymbolNumber = fromIndex - traversedInParagraph;
+					traversedInParagraph += currentWordSymbols;
+					int endSymbolNumber = toIndex - traversedInParagraph;
+					Word newWord(currentWordSymbols);
+					std::copy(word->begin() + startSymbolNumber, word->end() - endSymbolNumber, newWord.begin());
+					newParagraph.push_back(newWord);
+				}
+			}
+			newDoc.push_back(newParagraph);
+		}
+		traversedSymbols += currentParagraphSymbols;
 	}
-	return newDocument;
+	return newDoc;
 }
 
 Document Document::cut(int fromIndex, int toIndex)

@@ -38,7 +38,9 @@ Document Document::copy(int fromIndex, int toIndex)
 
 Document Document::cut(int fromIndex, int toIndex)
 {
-	return Document();
+	Document newDocument(copy(fromIndex, toIndex));
+	remove(fromIndex, toIndex);
+	return newDocument;
 }
 
 void Document::remove(int fromIndex, int toIndex)

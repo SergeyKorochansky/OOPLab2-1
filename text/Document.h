@@ -10,9 +10,9 @@ public:
 
 	const int fullSize() const;
 
-	Document copy(int begin, int end);
-	void remove(int begin, int end);
-	Document cut(int begin, int end);
+	Document copy(int fromIndex, int toIndex);
+	void remove(int fromIndex, int toIndex);
+	Document cut(int fromIndex, int toIndex);
 
 	friend std::istream &operator>>(std::istream &stream, Document &document);
 	friend std::ostream &operator<<(std::ostream &stream, Document &document);

@@ -36,11 +36,11 @@ Document Document::copy(int fromIndex, int toIndex)
 	return Document();
 }
 
-Document Document::cut(int begin, int end)
+Document Document::cut(int fromIndex, int toIndex)
 {
 	return Document();
 }
 
-void Document::remove(int begin, int end)
+void Document::remove(int fromIndex, int toIndex)
 {
 }

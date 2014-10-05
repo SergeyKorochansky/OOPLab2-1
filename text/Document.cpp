@@ -25,7 +25,7 @@ std::ostream &operator<<(std::ostream &stream, Document &document)
 
 Document Document::copy(int fromIndex, int toIndex)
 {
-	Document newDoc;
+	Document newDocument;
 	for (auto it = begin(); it != end(); ++it)
 	{
 		//if (*it < fromIndex)
@@ -33,7 +33,7 @@ Document Document::copy(int fromIndex, int toIndex)
 
 		//}
 	}
-	return Document();
+	return newDocument;
 }
 
 Document Document::cut(int fromIndex, int toIndex)

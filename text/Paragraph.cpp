@@ -3,7 +3,7 @@
 
 const int Paragraph::fullSize() const
 {
-	int sum;
+	int sum = 0;
 	for(auto it = begin(); it != end(); ++it)
 		sum += it->size();
 	return sum;
